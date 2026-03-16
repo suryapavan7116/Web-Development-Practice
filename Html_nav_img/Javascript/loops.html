@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Loops in JavaScript</h1>
+    <script>
+    let a = [78, 92, 45, 66];
+    let i = 0;
+
+do {
+
+    let grade;
+    if (a[i] >= 90) {
+        grade = "A";
+    } else if (a[i] >= 75) {
+        grade = "B";
+    } else if (a[i] >= 60) {
+        grade = "C";
+    } else {
+        grade = "Fail";
+    }
+
+    document.write("Student", i+1, "Grade:", grade);
+
+    i++;
+
+} while (i < a.length);
+</script><br>
+
+
+<script>
+    let b = [88, 76, 59, 91, 68];
+
+for (let j = 0; j < b.length; j++) {
+
+    let grade;
+
+    if (b[j] >= 90) {
+        grade = "A";
+    } else if (b[j] >= 75) {
+        grade = "B";
+    } else if (b[j] >= 60) {
+        grade = "C";
+    } else {
+        grade = "Fail";
+    }
+
+    document.write("Student", j+1, "Marks:", b[j], "Grade:", grade);
+}
+</script><br>
+
+
+
+<script>
+    let c = [95, 82, 67, 55, 40];
+let d = 0;
+
+while (d < c.length) {
+
+    if (c[d] >= 90) {
+        document.write("Student", ": Grade A");
+    } 
+    else if (c[d] >= 75) {
+        document.write("Student", ": Grade B");
+    } 
+    else if (c[d] >= 60) {
+        document.write("Student",  ": Grade C");
+    } 
+    else if (c[d] >= 50) {
+        document.write("Student", ": Grade D");
+    } 
+    else {
+        document.write("Student",  ": Fail");
+    }
+
+    d++;
+}
+</script>
+
+
+</body>
+</html>

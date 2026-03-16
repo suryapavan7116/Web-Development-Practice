@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Web Notepad</title>
+<link rel="stylesheet" href="notepad.css">
+</head>
+
+<body>
+
+<div class="notepad">
+
+<div class="toolbar">
+
+<button onclick="saveFile()">Save</button>
+
+
+<select id="fontSelector" onchange="changeFont()">
+<option value="Arial">Arial</option>
+<option value="Times New Roman">Times New Roman</option>
+<option value="Courier New">Courier New</option>
+<option value="Georgia">Georgia</option>
+<option value="Verdana">Verdana</option>
+</select>
+
+<button onclick="toggleBold()">Bold</button>
+
+</div>
+
+<textarea id="editor"></textarea>
+
+</div>
+
+<script src="notepad.js"></script>
+
+</body>
+</html>

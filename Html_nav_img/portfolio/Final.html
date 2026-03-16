@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Surya Pavan | Portfolio</title>
+  <meta charset="UTF-8">
+
+  <style>
+
+    /* ===============================
+       GLOBAL STYLES
+    =============================== */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+
+      color: white;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    section {
+      padding: 60px 10%;
+    }
+
+    /* ===============================
+       NAVIGATION
+    =============================== */
+    nav {
+      background: rgba(0,0,0,0.6);
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #2efe77;
+    }
+
+    /* ===============================
+       HERO SECTION
+    =============================== */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .hero img {
+      width: 160px;
+      border-radius: 50%;
+      margin-top: 20px;
+      border: 4px solid #00f5d4;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      box-shadow: #1cf127;
+      background: linear-gradient(45deg, #00f5d4, #00bbf9);
+      color: black;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      background: linear-gradient(45deg, #05455a, #00ccb1);
+    }
+
+    /* ===============================
+       CARD CONTAINER
+    =============================== */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    /* ===============================
+       GENERAL CARD DESIGN
+    =============================== */
+    .card {
+      background: rgba(255,255,255,0.08);
+      padding: 25px;
+      width: 260px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.4s;
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+        box-shadow: #9d24ff;
+      background: linear-gradient(45deg, #01961d, #00bbf9);
+      color: black;
+      transform: translateY(-10px);
+    }
+
+    /* ===============================
+       EDUCATION TABLE
+    =============================== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+      background: rgba(255,255,255,0.08);
+      box-shadow: #3d5afc;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: center;
+    }
+
+    th {
+      background: #00bbf9;
+      color: black;
+    }
+
+    tr {
+      transition: 0.3s;
+    }
+
+    tr:hover {
+      background: #00f5d4;
+      color: black;
+    }
+
+    /* ===============================
+       EXPERIENCE LONG CARD
+    =============================== */
+    .experience-card {
+        box-shadow: #5944ff;
+      background: rgba(155, 8, 8, 0.08);
+      padding: 40px;
+      border-radius: 20px;
+      margin-top: 40px;
+      transition: 0.4s;
+    }
+
+    .experience-card:hover {
+        box-shadow: #9d24ff;
+      background: linear-gradient(90deg, #00f5d4, #00bbf9);
+      color: black;
+      transform: scale(1.02);
+    }
+
+    /* ===============================
+       CERTIFICATION HOVER FLIP
+    =============================== */
+    .cert-card {
+      position: relative;
+      width: 260px;
+      height: 150px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: #9d24ff;
+      background: rgba(255,255,255,0.08);
+      transition: 0.4s;
+    }
+
+    .cert-front, .cert-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .cert-back {
+        box-shadow: #9d24ff;
+      background: linear-gradient(45deg, #00f5d4, #00bbf9);
+      color: black;
+      opacity: 0;
+    }
+
+    .cert-card:hover .cert-front {
+      opacity: 0;
+    }
+
+    .cert-card:hover .cert-back {
+      opacity: 1;
+    }
+
+    /* ===============================
+       CONTACT CARDS
+    =============================== */
+    .contact-card {
+        box-shadow: #9d24ff;
+      background: rgba(255,255,255,0.08);
+      padding: 25px;
+      width: 260px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .contact-card:hover {
+      background: linear-gradient(45deg, #00bbf9, #00f5d4);
+      box-shadow: #9d24ff;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      margin-top: 50px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- ===============================
+     NAVIGATION
+================================ -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#education">Education</a>
+  <a href="#experience">Experience</a>
+  <a href="#certifications">Certifications</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ===============================
+     HERO SECTION
+================================ -->
+<div class="hero">
+  <h1>Hi, I'm Surya Pavan 👋</h1>
+  <p>Aspiring Software Developer | AI & ML Enthusiast</p>
+  <img src="profile.JPG" alt="Profile Image">
+  <br>
+  <a href="resume.pdf" class="btn">Download Resume</a>
+</div>
+
+<!-- ===============================
+     ABOUT SECTION
+================================ -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card-container">
+    <div class="card">
+      Passionate about building scalable web applications.
+    </div>
+    <div class="card">
+      Focused on AI/ML and modern technologies.
+    </div>
+    <div class="card">
+      Strong believer in daily learning and growth.
+    </div>
+  </div>
+</section>
+
+<!-- ===============================
+     SKILLS SECTION
+================================ -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card-container">
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
+    <div class="card">Java</div>
+    <div class="card">AI & ML</div>
+    <div class="card">React</div>
+  </div>
+</section>
+
+<!-- ===============================
+     PROJECTS SECTION
+================================ -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="card-container">
+    <div class="card">
+      <h3>Flight Radar Clone</h3>
+      <p>Live flight tracking using APIs.</p>
+    </div>
+    <div class="card">
+      <h3>College Fest App</h3>
+      <p>QR based event registration system.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===============================
+     EDUCATION TABLE
+================================ -->
+<section id="education">
+  <h2>Education</h2>
+  <table>
+    <tr>
+      <th>Degree</th>
+      <th>Institution</th>
+      <th>Year</th>
+    </tr>
+    <tr>
+      <td>B.Tech CSE</td>
+      <td>Your College Name</td>
+      <td>2022 - 2026</td>
+    </tr>
+    <tr>
+      <td>Intermediate</td>
+      <td>Your Junior College</td>
+      <td>2020 - 2022</td>
+    </tr>
+  </table>
+</section>
+
+<!-- ===============================
+     EXPERIENCE LONG CARD
+================================ -->
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="experience-card">
+    <h3>Web Development Practice & Projects</h3>
+    <p>
+      Building real-time applications, improving UI/UX,
+      integrating APIs, and practicing full-stack development daily.
+    </p>
+  </div>
+</section>
+
+<!-- ===============================
+     CERTIFICATIONS
+================================ -->
+<section id="certifications">
+  <h2>Certifications</h2>
+  <div class="card-container">
+
+    <div class="cert-card">
+      <div class="cert-front">
+        Web Development Certificate
+      </div>
+      <div class="cert-back">
+        <a href="https://yourcertificateurl.com" class="btn">View Certificate</a>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-front">
+        AI & ML Certification
+      </div>
+      <div class="cert-back">
+        <a href="https://yourcertificateurl.com" class="btn">View Certificate</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===============================
+     CONTACT SECTION
+================================ -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="card-container">
+    <div class="contact-card">
+      📧 suryapavanchinna2003@gmail.com
+    </div>
+    <div class="contact-card">
+      🔗 linkedin.com/in/yourprofile
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Surya Pavan | All Rights Reserved
+</footer>
+
+</body>
+</html>

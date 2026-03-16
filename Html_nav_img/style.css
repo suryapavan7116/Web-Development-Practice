@@ -1,0 +1,31 @@
+body{
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    width: 300px;
+    text-align: center;
+    
+}
+.card .inner-card {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    padding: 5px;
+    margin-top: 20px;
+    transition: 0.3 ease-in-out;
+   
+}
+.card .inner-card:hover {
+    background-color: #154d74;
+    color:rgb(221, 216, 216);
+     transform: scale(1.05);
+    box-shadow: 0 0 30px 10px rgba(223, 53, 53, 0.6);
+}
