@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HTML Graphics & API Practice</title>
+
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+    }
+
+    #box {
+      width: 100px;
+      height: 100px;
+      background: lightblue;
+      margin: 10px auto;
+    }
+
+    #dropArea {
+      width: 200px;
+      height: 100px;
+      border: 2px dashed black;
+      margin: 10px auto;
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>HTML Graphics & API Demo</h1>
+
+<!-- ✅ SVG Graphics (No Quality Loss) -->
+<h3>SVG Circle</h3>
+<svg width="120" height="120">
+  <circle cx="60" cy="60" r="50" fill="blue" />
+</svg>
+
+<!-- ✅ Canvas Graphics (Pixel Based Drawing) -->
+<h3>Canvas Rectangle</h3>
+<canvas id="myCanvas" width="200" height="100" style="border:1px solid black;"></canvas>
+
+<script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "green";
+  ctx.fillRect(20, 20, 150, 60);
+</script>
+
+<!-- ✅ Geolocation API -->
+<h3>Get Your Location</h3>
+<button onclick="getLocation()">Click for Location</button>
+<p id="location"></p>
+
+<script>
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      document.getElementById("location").innerHTML =
+        "Latitude: " + position.coords.latitude +
+        " | Longitude: " + position.coords.longitude;
+    });
+  } else {
+    document.getElementById("location").innerHTML = "Geolocation not supported.";
+  }
+}
+</script>
+
+<!-- ✅ Web Storage API -->
+<h3>Web Storage Example</h3>
+<button onclick="saveData()">Save Name</button>
+
+<script>
+function saveData() {
+  localStorage.setItem("name", "Surya");
+  alert("Name saved in browser storage!");
+}
+</script>
+
+<!-- ✅ Drag and Drop API -->
+<h3>Drag and Drop</h3>
+<div id="box" draggable="true" ondragstart="drag(event)">Drag Me</div>
+
+<div id="dropArea" ondrop="drop(event)" ondragover="allowDrop(event)">
+  Drop Here
+</div>
+
+<script>
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function drag(event) {
+  event.dataTransfer.setData("text", event.target.id);
+}
+
+function drop(event) {
+  event.preventDefault();
+  const data = event.dataTransfer.getData("text");
+  event.target.appendChild(document.getElementById(data));
+}
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>My HTML Practice</title>
+
+  <!-- Internal CSS -->
+  <style>
+    body {
+      background-color: #f4f4f4; /* HEX color */
+      font-family: Arial;
+    }
+
+    .section {
+      color: rgb(0, 102, 204); /* RGB color */
+      padding: 10px;
+    }
+  </style>
+
+  <!-- External CSS (example) -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Semantic Tag (SEO + Accessibility) -->
+  <header>
+    <h1 style="color:red;">Welcome to My Web Page</h1> <!-- Inline CSS -->
+  </header>
+
+  <!-- Section Content -->
+  <section class="section">
+    <p>This is a simple paragraph showing HTML structure.</p>
+  </section>
+
+  <!-- Image with Attribute (Accessibility) -->
+  <img src="image.jpg" alt="Profile Image" width="200">
+
+  <!-- Form Example -->
+  <h3>Contact Form</h3>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name">
+    <br><br>
+    <input type="submit">
+  </form>
+
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<head>
+    <title>Practice</title>
+</head>
+<html>
+    <nav style="background-color: black;padding:10px;"></nav>
+
+    <body>
+        <form style="border:2px solid black; padding:20px; margin:50px; width:300px;">
+            <label for="username">username: </label>
+            <input type="email" name="email" id="email" value=""><br>
+            <span style="color: brown"> there</span><br><br>
+            
+            <label for="Yes">Disability</label>
+            <input type="radio">
+            <label for="yes">Yes</label>
+            <input type="radio" name="No">
+            <label for="yes">Yes</label><br><br><br>
+            <input type="checkbox">
+            <label for="prakash">prakash</label><br>
+            <input type="checkbox">
+            <label for="sandeep">sandeep</label><br><br>
+            <input type="submit" name="submit" value="submit"><br><br><br>
+            <audio controls>
+                <source src="Lucky.mp3 ">
+            </audio>
+
+        </form>
+    </body>
+       
+
+</html> -->
