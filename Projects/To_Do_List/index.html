@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager Pro</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app" id="app">
+    <aside class="sidebar">
+      <h2>TaskFlow</h2>
+      <button id="addTaskBtn">+ Add Task</button>
+      <button id="toggleTheme">🌙 Toggle Theme</button>
+    </aside>
+
+    <main>
+      <header>
+        <input type="text" id="search" placeholder="Search tasks..." />
+        <select id="filter">
+          <option value="all">All</option>
+          <option value="high">High Priority</option>
+          <option value="medium">Medium Priority</option>
+          <option value="low">Low Priority</option>
+        </select>
+      </header>
+<section class="dashboard">
+        <div class="stat-card">
+          <span class="stat-label">Total</span>
+          <span class="stat-value" id="total">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Completed</span>
+          <span class="stat-value" id="completed">0</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Pending</span>
+          <span class="stat-value" id="pending">0</span>
+        </div>
+        <div class="progress-section">
+          <span class="progress-label">Progress</span>
+          <div class="progress-bar">
+            <div id="progressFill"></div>
+          </div>
+          <span class="progress-percent" id="progressPercent">0%</span>
+        </div>
+
+      <section class="board">
+        <div class="column" data-status="todo">
+          <h3>To Do</h3>
+          <div class="task-list" id="todo"></div>
+        </div>
+        <div class="column" data-status="progress">
+          <h3>In Progress</h3>
+          <div class="task-list" id="inProgress"></div>
+        </div>
+        <div class="column" data-status="done">
+          <h3>Done</h3>
+          <div class="task-list" id="done"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add Task</h2>
+        <button class="close-btn" onclick="document.getElementById('modal').style.display='none'">✕</button>
+      </div>
+      <input id="title" placeholder="Title" />
+      <textarea id="desc" placeholder="Description"></textarea>
+      <input type="date" id="date" />
+      <select id="priority">
+        <option value="low">Low Priority</option>
+        <option value="medium">Medium Priority</option>
+        <option value="high">High Priority</option>
+      </select>
+      <div class="modal-buttons">
+        <button id="saveTask" class="save-btn">Save</button>
+        <button class="cancel-btn" onclick="document.getElementById('modal').style.display='none'">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
